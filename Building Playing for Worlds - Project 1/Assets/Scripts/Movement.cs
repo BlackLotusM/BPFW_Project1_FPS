@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public LayerMask groundMask;
 
     public float jumpHeight = 2f;
+    public bool jetpack = false;
 
     Vector3 velocity;
     bool isGrounder;
@@ -24,11 +25,19 @@ public class Movement : MonoBehaviour
     void Update()
     {
         isGrounder = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (isGrounder)
+        {
+            jetpack = false;
+        }else if(isGrounder == false)
+        {
+            jetpack = true;
+        }
 
         if(isGrounder && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
