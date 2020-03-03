@@ -19,18 +19,28 @@ public class Movement : MonoBehaviour
     Vector3 velocity;
     bool isGrounder;
 
-    
+    public int jetpacktimer;
+    public int jetpackmaxfuel;
+
 
     // Update is called once per frame
     void Update()
     {
         isGrounder = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
         if (isGrounder)
         {
             jetpack = false;
-        }else if(isGrounder == false)
+            jetpacktimer = 0;
+        }
+        else 
+        if(isGrounder == false && jetpacktimer <= jetpackmaxfuel)
         {
             jetpack = true;
+        }
+        else
+        {
+            jetpack = false;
         }
 
         if(isGrounder && velocity.y < 0)
@@ -47,6 +57,19 @@ public class Movement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        if (Input.GetButton("Jump") && isGrounder == false)
+        {
+            if (jetpack == true)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                jetpacktimer++;
+            }
+            else
+            {
+
+            }
+        }
+         
         if(Input.GetButtonDown("Jump") && isGrounder == true)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);

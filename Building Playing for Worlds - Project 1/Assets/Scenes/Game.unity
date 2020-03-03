@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 607014643}
   - component: {fileID: 607014642}
   - component: {fileID: 607014646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,9 +502,11 @@ MonoBehaviour:
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   jumpHeight: 2
   jetpack: 0
+  jetpacktimer: 0
+  jetpackmaxfuel: 100
 --- !u!1 &690041783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 795aa8b0d63caf04fae22b719cac3772,
@@ -525,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
-  FireRate: 10
+  FireRate: 5
   Fire: {fileID: 1359214872}
   fpsCam: {fileID: 2069727080}
 --- !u!1 &705507993
@@ -632,7 +634,7 @@ GameObject:
   - component: {fileID: 721586079}
   - component: {fileID: 721586078}
   - component: {fileID: 721586077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +812,7 @@ GameObject:
   - component: {fileID: 970869858}
   - component: {fileID: 970869857}
   - component: {fileID: 970869856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
