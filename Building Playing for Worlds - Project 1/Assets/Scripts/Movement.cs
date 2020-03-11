@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     Vector3 velocity;
     bool isGrounder;
 
-    public int jetpacktimer;
+    public float jetpacktimer;
     public int jetpackmaxfuel;
 
 
@@ -59,15 +59,12 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButton("Jump") && isGrounder == false)
         {
-            if (jetpack == true)
+            if (jetpack)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-                jetpacktimer++;
+                jetpacktimer += Time.deltaTime;
             }
-            else
-            {
-
-            }
+            
         }
          
         if(Input.GetButtonDown("Jump") && isGrounder == true)

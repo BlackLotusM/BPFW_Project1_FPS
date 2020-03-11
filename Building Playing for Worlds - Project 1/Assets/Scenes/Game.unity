@@ -502,11 +502,11 @@ MonoBehaviour:
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   jumpHeight: 2
   jetpack: 0
   jetpacktimer: 0
-  jetpackmaxfuel: 100
+  jetpackmaxfuel: 10
 --- !u!1 &690041783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 795aa8b0d63caf04fae22b719cac3772,
