@@ -13050,6 +13050,7 @@ GameObject:
   - component: {fileID: 2069727080}
   - component: {fileID: 2069727079}
   - component: {fileID: 2069727082}
+  - component: {fileID: 2069727083}
   m_Layer: 0
   m_Name: CharacterCam
   m_TagString: Untagged
@@ -13153,6 +13154,17 @@ MonoBehaviour:
   Timee: {fileID: 729985511}
   Killed: {fileID: 1064815866}
   Hit: {fileID: 935684600}
+--- !u!192 &2069727083
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069727077}
+  serializedVersion: 2
+  m_Size: {x: 60, y: 30, z: 60}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_IsViewVolume: 1
 --- !u!1 &2101784945
 GameObject:
   m_ObjectHideFlags: 0
