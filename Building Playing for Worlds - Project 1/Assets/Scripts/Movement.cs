@@ -1,6 +1,7 @@
 ﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -22,7 +23,13 @@ public class Movement : MonoBehaviour
     public float jetpacktimer;
     public int jetpackmaxfuel;
 
+    public float staminaTimer;
+    public int maxStamina;
 
+    public Image ManaChange;
+
+
+    public bool used = false;
     // Update is called once per frame
     void Update()
     {
@@ -48,6 +55,7 @@ public class Movement : MonoBehaviour
             velocity.y = -2f;
         }
 
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -63,11 +71,12 @@ public class Movement : MonoBehaviour
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 jetpacktimer += Time.deltaTime;
+                
             }
             
         }
-         
-        if(Input.GetButtonDown("Jump") && isGrounder == true)
+        ManaChange.fillAmount = jetpacktimer / 4;
+        if (Input.GetButtonDown("Jump") && isGrounder == true)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
